@@ -1,0 +1,72 @@
+.skills {
+  background-color: #30336b;
+  background-image: linear-gradient(to right bottom, #3B3B98, #182C61);
+
+  &__content {
+
+    &--text {
+      text-align: center;
+      color: #FFFFFF;
+      h2 {
+        font-weight: 200;
+        font-size: 3rem;
+        text-transform: uppercase;
+      }
+      p {
+        text-transform: lowercase;
+        font-weight: 300;
+        font-size: 1.7rem;
+        /* letter-spacing: 0.5px; */
+      }
+      .owl-carousel {
+        margin-top: 5rem;
+      }
+      .skill {
+        margin-right: 3rem;
+        &:last-item {
+          margin-right: 0px;
+        }
+        h4 {
+          color: #FFFFFF;
+          font-size: 2.5rem;
+          font-weight: 300;
+        }
+        p {
+          font-weight: 300;
+          font-size: 1.4rem;
+        }
+      }
+      .chart {
+        position: relative;
+        width: 152px;
+        height: 152px;
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        canvas {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+        .percent {
+          margin: 0px;
+          padding: 0px;
+          color: #FFFFFF;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          font-size: 3rem;
+          &:after {
+            content: "%";
+          }
+        }
+      }
+
+    }
+
+
+  }
+
+
+}

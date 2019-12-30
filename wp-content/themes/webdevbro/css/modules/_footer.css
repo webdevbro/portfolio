@@ -1,0 +1,19 @@
+.site-footer {
+  background-color: #000000;
+}
+.site-footer__content {
+  display: block;
+  color: #F8F8F8;
+  padding: 4rem 5px;
+  &--text {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    p {
+      margin: 0px;
+    }
+  }
+  &--nav {
+
+  }
+}

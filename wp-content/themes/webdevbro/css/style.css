@@ -1,0 +1,39 @@
+/*
+Theme Name: WEBDEVBRO custom theme
+Theme URI: https://wordpress.org/themes/twentyseventeen/
+Author: Boris Ortiz
+Author URI: https://rowebdev.com/
+Description: Custom theme for WEB DEV BRO portfolio website.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: webdevbro
+Tags: responsive, portfolio, json.
+*/
+
+/* LIBS */
+
+@import "normalize.css";
+@import "libs/superslides.css";
+@import "libs/owlcarousel.css";
+@import "base/_variables";
+@import "base/_global";
+@import "base/_media";
+@import "base/_utilities";
+
+@import "modules/_layout";
+@import "modules/_header";
+@import "modules/_button";
+@import "modules/_footer";
+@import "modules/_slider";
+@import "modules/_about";
+@import "modules/_skills";
+@import "modules/_stats";
+@import "modules/_contact";
+@import "modules/_portfolio";
+@import "modules/_navigation";
+@import "modules/_page-banner";
+@import "modules/_generic-content";
+@import "modules/_headline";
+@import "modules/_metabox";
+@import "modules/_search-overlay";

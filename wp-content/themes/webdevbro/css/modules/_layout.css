@@ -1,0 +1,42 @@
+.layout {
+  padding: 0px 0px;
+
+  &__container {
+    display: block;
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 2rem;
+  }
+
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0px auto;
+  padding: 0px 16px;
+  position: relative;
+}
+.container--narrow {
+  max-width: 960px;
+  margin: 0px auto;
+}
+
+/* PAGE SECTION */
+.page-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @mixin atSmall {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  &--white {
+    background-color: #FFFFFF;
+  }
+  p:last-of-type {
+    margin-bottom: 0px;
+  }
+
+
+
+} /* .page-section */
+

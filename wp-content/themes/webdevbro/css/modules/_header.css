@@ -1,0 +1,17 @@
+.site-header-fp,
+.site-content-fp {
+  overflow: hidden;
+}
+
+/* HEADER INTERNAL PAGES */
+.site-header {
+  z-index: 3;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 20px 0px;
+
+
+
+} /* .site-header */

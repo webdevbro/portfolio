@@ -1,0 +1,65 @@
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  padding: 12px 24px;
+  border: none;
+  outline: none;
+
+  &--small {
+    font-size: 1.4rem;
+    padding: 7px 13px;
+    font-weight: 300;
+  }
+  &--with-photo {
+    padding-left: 40px;
+    postion: relative;
+  }
+  &--orange {
+    background-color: $lightOrange;
+  }
+  &--orange:hover {
+    background: linear-gradient($lightOrange, color($darkOrange b(+40%) s(+80%)));
+  }
+  &--blue {
+    background-color: $mainBlue;
+  }
+  &--blue:hover {
+    background: linear-gradient(color($mainBlue b(-16%)), $mainBlue);
+  }
+  &--yellow {
+    background-color: $mainYellow;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
+  }
+  &--yellow:hover {
+    background: linear-gradient($mainYellow, color($mainYellow b(+16%) s(+80%)));
+  }
+  &--gray {
+    background-color: #222222;
+  }
+  &--white {
+    background-color: #FFFFFF;
+    color: #173F58;
+  }
+  &--white:hover {
+    background-color: #DDDDDD;
+  }
+  &--large {
+    font-size: 1.6rem;
+    padding: 16px 34px;
+    border-radius: 7px;
+    @mixin atSmall {
+      font-size: 2.3rem;
+    }
+  }
+  &--inactive {
+    background-color: transparent;
+    cursor: default;
+    color: #333333;
+  }
+
+} /* .btn */

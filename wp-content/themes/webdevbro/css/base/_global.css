@@ -1,0 +1,30 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow-y: scroll;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Blinker', serif;
+  color: $blackText;
+  letter-spacing: 1px;
+  overflow-x: hidden;
+  position: relative;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a:hover {
+  text-decoration: none;
+}
+p, ul, ol {
+  margin: 0px 0px 2rem 0px;
+}
+p, li {
+  line-height: 2rem;
+}

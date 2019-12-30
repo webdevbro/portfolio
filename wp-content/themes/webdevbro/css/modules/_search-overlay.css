@@ -1,0 +1,146 @@
+.search-overlay {
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 110;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.96);
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.09);
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  box-sizing: border-box;
+
+  p {
+    padding-top: 15px;
+  }
+  .event-summary {
+    padding-top: 0px;
+  }
+  body.admin-bar & {
+    top: 32px;
+  }
+  &__top {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+  &__icon {
+    margin-right: 10px;
+    font-size: 2.2rem;
+    color: $darkOrange;
+    @mixin atMedium {
+      font-size: 3rem;
+    }
+  }
+  &--active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+  &__section-title {
+    margin: 30px 0px 1px 0px;
+    font-weight: 400;
+    color: $mainBlue;
+    font-size: 2.6rem;
+    padding: 15px 0px;
+    border-bottom: 1px solid #CCCCCC;
+  }
+  &__close {
+    position: absolute;
+    top: 13px;
+    right: 16px;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    color: $darkOrange;
+    line-height: 0.7;
+    @mixin atSmall {
+      top: 18px;
+      font-size: 2.7rem;
+    }
+    @mixin atMedium {
+      top: 20px;
+      font-size: 3.6rem;
+    }
+  }
+  &__close:hover {
+    opacity: 1;
+  }
+  .one-half {
+    padding-bottom: 0px;
+  }
+
+} /* .search-overlay */
+
+.search-term {
+  width: 75%;
+  box-sizing: border-box;
+  border: none;
+  padding: 15px 0px;
+  margin: 0px;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-weight: 300;
+  outline: none;
+  color: $darkOrange;
+  @mixin atSmall {
+    font-size: 2.2rem;
+  }
+  @mixin atMedium {
+    width: 80%;
+    font-size: 3.8rem;
+  }
+}
+.search-term::placeholder {
+  color: $blackText;
+}
+.body-no-scroll {
+  overflow: hidden;
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.spinner-loader {
+  margin-top: 45px;
+  border-radius: 75%;
+  width: 24px;
+  height: 24px;
+  border: 0.25rem solid rgba(0, 0, 0, 0.2);
+  border-top-color: black;
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+}
+
+.link-list {
+  li {
+    padding: 1rem;
+    font-size: 2rem;
+    border-bottom: 1px dotted #DEDEDE;
+    .search-overlay & {
+      font-size: 1.6rem;
+    }
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+  a {
+    color: $mainBlue;
+  }
+}
+
+.min-list li {
+  list-style: none;
+}
