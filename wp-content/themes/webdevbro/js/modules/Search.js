@@ -4,6 +4,7 @@ class Search {
 
   // 1. describe and create/initiate the object
   constructor() {
+    this.addSearchHTML();
     this.resultsDiv = document.querySelector("#search-overlay__results");
     this.openButton = document.querySelector(".js-search-trigger");
     this.closeButton = document.querySelector(".search-overlay__close");
@@ -34,7 +35,7 @@ class Search {
           this.resultsDiv.innerHTML = ("<div class='spinner-loader'></div>");
           this.isSpinnerVisible = true;
         }
-        this.typingTimer = setTimeout(this.getResults.bind(this), 500);
+        this.typingTimer = setTimeout(this.getResults.bind(this), 300);
       } else {
         this.resultsDiv.innerHTML = "";
         this.isSpinnerVisible = false;
@@ -64,7 +65,6 @@ class Search {
     }
     request.send();
   }
-
   keyPressDispatcher(event) {
     if (event.keyCode == 83 && this.isOverlayOpen == false && document.querySelector("input") != document.activeElement) {
       this.openOverlay();
@@ -79,7 +79,7 @@ class Search {
     this.searchField.value = "";
     setTimeout(() => {
       this.searchField.focus();
-    }, 300);
+    }, 301);
     this.isOverlayOpen = true;
   }
   closeOverlay() {
@@ -87,7 +87,21 @@ class Search {
     document.querySelector("html").classList.remove("body-no-scroll");
     this.isOverlayOpen = false;
   }
-
-
+  addSearchHTML() {
+    document.body.insertAdjacentHTML("beforeend", `
+    <div class="search-overlay">
+      <div class="search-overlay__top">
+        <div class="container">
+          <i class="fas fa-search search-overlay__icon" aria-hidden="true"></i>
+          <input type="text" class="search-term" placeholder="What are you looking for?" id="search-term" autocomplete="off">
+          <i class="fas fa-window-close search-overlay__close" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="container">
+        <div id="search-overlay__results"></div>
+      </div>
+    </div>
+    `);
+  }
 }
 export default Search;
