@@ -593,6 +593,10 @@ p, li {
 
 .t-small { font-size: 1rem; }
 
+.t-normal { font-size: 1.6rem; }
+
+.t-large { font-size: 2rem; }
+
 .float-left { float: left; }
 
 .float-right { float: right; }
