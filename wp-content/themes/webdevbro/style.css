@@ -1191,13 +1191,9 @@ p, li {
 
 .portfolio { /* &__content */
 
-
-
-
 }
 
 .portfolio__content { /* .items */
-
 
   }
 
@@ -1277,7 +1273,6 @@ p, li {
       align-items: center;
       justify-content: center;
       margin: 0px auto; /* .item */
-
 
     }
 
@@ -1445,7 +1440,8 @@ p, li {
 .portfolio-grid {
     display: flex;
     flex-direction: row;
-    justify-content: space-between
+    justify-content: space-between;
+    flex-wrap: wrap
 
 
 

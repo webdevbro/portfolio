@@ -77,6 +77,7 @@
                 <li><a href="<?php echo site_url(); ?>">Home</a></li>
                 <li <?php if(get_post_type() == "post") { echo "class='current-menu-item'"; } ?>><a href="<?php echo site_url('/blog'); ?>">Blog</a></li>
                 <li <?php if (get_post_type() == "portfolio") { echo "class='current-menu-item'"; } ?>><a href="<?php echo get_post_type_archive_link('portfolio'); ?>">Portfolio</a></li>
+                <li <?php if (get_post_type() == "tutorial") { echo "class='current-menu-item'"; } ?>><a href="<?php echo get_post_type_archive_link('tutorial'); ?>">Tutorials</a></li>
               </ul>
             </nav>
           </div>

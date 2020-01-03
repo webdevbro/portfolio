@@ -1,4 +1,5 @@
 <?php
+
 /* SETUP FUNCTIONS */
 if (!function_exists('webdevbro_setup')) {
   function webdevbro_setup() {
@@ -88,8 +89,22 @@ function webdevbro_post_types() {
       'singular_name' => 'Portfolio'
     ),
     'menu_icon' => 'dashicons-portfolio',
-    /* 'show_in_rest'    => true,
-    'supports'        => array('editor') */
+  ));
+  // TUTORIALS POST TYPE
+  register_post_type('tutorial', array(
+    'supports'   => array('title', 'editor', 'excerpt'),
+    'show_in_rest'  => true,
+    'has_archive'   => true,
+    'public'  => true,
+    'labels'  => array(
+      'name'  => 'Tutorials',
+      'singular_name' => 'Tutorial',
+      'add_new_item'  => 'Add new Tutorial item',
+      'edit_item'     => 'Edit Tutorial item',
+      'all_items'     => 'All Tutorial items'
+    ),
+    'rewrite'         => array('slug' => 'tutorials'),
+    'menu_icon' => 'dashicons-book-alt'
   ));
 
   // PORTFOLIO TAXONOMY
@@ -113,7 +128,6 @@ function webdevbro_post_types() {
     'rewrite'          => array('slug' => 'topic')
   );
   register_taxonomy('topics', 'portfolio', $args);
-
 
 }
 add_action('init', 'webdevbro_post_types');
@@ -140,3 +154,16 @@ function page_banner($args = null) {
   </div>
 <?php
 }
+
+/* CUSTOMIZING REST API */
+function webdevbro_custom_rest() {
+  register_rest_field(array("post", "portfolio"), "authorName", array(
+    'get_callback' => function() {
+      return array(get_the_author(), get_the_author_link());
+    }
+  ));
+}
+add_action('rest_api_init', 'webdevbro_custom_rest');
+
+/* CREATE NEW CUSTOM REST API */
+require get_theme_file_path("/inc/search-route.php");
